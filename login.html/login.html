@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #CAF4FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .options {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9em;
+        }
+        
+        .options a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .options a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="options">
+            <a href="http://127.0.0.1:5500/login.html/forgetpss.html" id="forgotPassword">Forgot Password?</a>
+            <a href="http://127.0.0.1:5500/login.html/signup.html" id="signUp">Sign Up</a>
+        </div>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+        
+            // Simple validation (this can be extended for more robust validation)
+            if (username === 'user' && password === 'password') {
+                alert('Login successful!');
+                // Redirect or perform other actions
+            } else {
+                document.getElementById('errorMessage').textContent = 'Invalid username or password';
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('forgotPassword').addEventListener('click', function() {
+            alert('Forgot Password link clicked. Implement password recovery process.');
+            // Implement password recovery process
+        });
+        
+        document.getElementById('signUp').addEventListener('click', function() {
+            alert('Sign Up link clicked. Redirect to registration page.');
+            // Redirect to registration page
+        });
+        
+    </script>
+</body>
+</html>

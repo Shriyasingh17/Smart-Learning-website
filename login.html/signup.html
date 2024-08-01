@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration</title>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #CAF4FF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .form-container {
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .signin-container {
+            margin-top: 20px;
+        }
+        
+        .signin-container a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .signin-container a:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Course Registration</h2>
+            <form id="registrationForm">
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="input-group">
+                    <label for="course">Select Course</label>
+                    <select id="course" name="course" required>
+                        <option value="course1">Course 1</option>
+                        <option value="course2">Course 2</option>
+                        <option value="course3">Course 3</option>
+                    </select>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+        <div class="signin-container">
+            <p>Already have an account? <a href="http://127.0.0.1:5500/login.html/login.html" id="signInLink">Sign In</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const course = document.getElementById('course').value;
+        
+            // Simple validation (this can be extended for more robust validation)
+            if (fullname && email && password && course) {
+                alert(`Registration successful for ${fullname} in ${course}!`);
+                // Here, you would typically send the data to the server
+            } else {
+                document.getElementById('errorMessage').textContent = 'Please fill out all fields';
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+        
+        document.getElementById('signInLink').addEventListener('click', function() {
+            alert('Redirect to sign-in page');
+            // Redirect to the sign-in page
+        });
+        
+    </script>
+</body>
+</html>

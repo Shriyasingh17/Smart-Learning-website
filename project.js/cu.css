@@ -1,0 +1,116 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+   background-color: #CAF4FF;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family:"montserrat", "sans-serif" ;
+}
+
+.contact-container{
+    height: 100vh;
+    display: flex;
+    margin: 50px;
+    margin-left: 4px;
+    padding-left: 4px;
+    justify-content: space-evenly;
+}
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+    padding-left:5px;
+    margin-left: 0%;
+}
+
+.contact-left-title{
+    font-weight: 600px;
+    color:#5AB2FF ;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.contact-right img{
+    height: 400px;
+    width:400px;
+    margin: 20px;
+
+}
+
+h3,p{
+    color: black;
+}
+
+
+.contact-inputs{
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left:25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 20px;
+    border-style: circular;
+}
+
+.contact-left textarea{
+    height:140px;
+    padding-top: 15px;
+    border-radius: 20px;
+    width: 300px;
+
+}
+
+.contact-input:focus{
+    border: 2px solid #5AB2FF;
+}
+@media screen and(max-width:768px){
+    .contact-left{
+       display: flex;
+       flex-direction: column;
+       padding: 15px;
+       max-width: 90%;
+    }
+}
+@media(max-width:480px){
+    .contact-right{
+        padding: 10px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.contact-left button{
+    display: left;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color:black;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: #5AB2FF;
+    cursor: pointer;
+
+}
+h2,hr{
+    color:black;
+
+}

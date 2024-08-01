@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "montserrat","sans-serif";
+    line-height: 1.5;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #CAF4FF;
+}
+.about-us{
+    width: 100%;
+
+}
+.about-us h1{
+    text-align: center;
+    font-size: 40px;
+    color: #5AB2FF;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 50px;
+}
+
+.wrapper{
+    padding: 0px 60px;
+    margin: 60px auto;
+}
+.content{
+
+    width: 60%;
+    text-align: left;
+    float: left;
+    padding: 0px 30px;  
+}
+.content h3{
+    color: #222;
+    letter-spacing: 1px;
+}
+.content p{
+    font-family: "montserrat","sans-serif" ;
+    font-size: 17px;
+    color: #3d3d3d;
+    margin-top:20px;
+}
+.content .button{
+    margin-top: 40px;
+
+}
+hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #5AB2FF;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.image-section{
+    width: 40%;
+    float: right;
+    padding: 0px 30px;
+}
+.image-section img{
+    max-width: 100%;
+    height: auto;
+
+}
+.button{
+    background-color: #5AB2FF;
+    width: 2px;
+}

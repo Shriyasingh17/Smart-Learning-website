@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color:  #CAF4FF;
+        }
+        
+        .course-list {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .course-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 10px 0;
+            position: relative;
+        }
+        
+        .heart-icon {
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .heart-icon.favorited {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="course-list">
+        <div class="course-card" data-course-id="1">
+            <h3>Angular Developer </h3>
+            <p>This courses is all about the html css javascript complete courses of 2024</p>
+            <span class="heart-icon" onclick="toggleFavorite(this, 1)">❤️</span>
+        </div>
+        <div class="course-card" data-course-id="2">
+            <h3>Artificial intelligence 2</h3>
+            <p>Course is about the artificial intelligence complete begineer to advance level 2024
+            </p>
+            <span class="heart-icon" onclick="toggleFavorite(this, 2)">❤️</span>
+        </div>
+        <div class="course-card" data-course-id="3">
+            <h3>Robots Course </h3>
+            <p>Course is about the robot all the feature and sensor for begginer in 2024</p>
+            <span class="heart-icon" onclick="toggleFavorite(this, 3)">❤️</span>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Load favorite courses from localStorage
+            const favoriteCourses = JSON.parse(localStorage.getItem('favoriteCourses')) || [];
+            favoriteCourses.forEach(courseId => {
+                const heartIcon = document.querySelector(`.course-card[data-course-id="${courseId}"] .heart-icon`);
+                if (heartIcon) {
+                    heartIcon.classList.add('favorited');
+                }
+            });
+        });
+        
+        function toggleFavorite(element, courseId) {
+            element.classList.toggle('favorited');
+        
+            // Get current favorites from localStorage
+            let favoriteCourses = JSON.parse(localStorage.getItem('favoriteCourses')) || [];
+        
+            if (element.classList.contains('favorited')) {
+                // Add course to favorites if it is not already in the list
+                if (!favoriteCourses.includes(courseId)) {
+                    favoriteCourses.push(courseId);
+                }
+            } else {
+                // Remove course from favorites
+                favoriteCourses = favoriteCourses.filter(id => id !== courseId);
+            }
+        
+            // Save updated favorites back to localStorage
+            localStorage.setItem('favoriteCourses', JSON.stringify(favoriteCourses));
+        }
+        
+    </script>
+</body>
+</html>
